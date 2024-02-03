@@ -22,3 +22,7 @@ def about():
 @app.route('/wordmaker')
 def wordMaker():
     return render_template('wordMaker.html')
+
+
+if  __name__ == "__main__":
+    app.run(debug=True)
