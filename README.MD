@@ -11,3 +11,9 @@ This application is designed to take user input of random letters and generate a
 ```
 flask --app main run
 ```
+
+#### Debug Mode
+
+```
+python main.py
+```
