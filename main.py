@@ -1,6 +1,8 @@
 # main/main.py
 
 from flask import Flask, render_template
+import requests
+import json
 
 app = Flask(__name__)
 
@@ -19,9 +21,20 @@ def about():
     return render_template('about.html')
 
 
-@app.route('/wordmaker')
+@app.route('/wordmaker', methods=['GET'])
 def wordMaker():
-    return render_template('wordMaker.html')
+    
+    api_url = "https://api.dictionaryapi.dev/api/v2/entries/en/mango"
+
+    try:
+        response = requests.get(api_url)
+        response_data = json.loads(response.text)
+        formatted_data = json.dumps(response_data, indent=4)
+        return render_template('wordMaker.html', data=formatted_data)
+
+    except Exception as e:
+        return render_template('wordMaker.html', error=str(e))
+
 
 
 if  __name__ == "__main__":

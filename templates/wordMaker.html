@@ -12,5 +12,39 @@
 
     <button>Generate</button>
 
+    <br />
+    <br />
+
+    <button id="dataButton">Test Data</button>
+
+    <div id="dataContainer" style="display: none;">
+        {% if data %}
+            <h4>Dictionary Data:</h4>
+            <pre>{{ data|safe }}</pre>
+        {% elif error %}
+            <h4>Error:</h4>
+            <p>{{ error }}</p>
+        {% endif %}
+    </div>
+
+    <script>
+        document.getElementById("dataButton").addEventListener("click", function() {
+            var dataContainer = document.getElementById("dataContainer");
+            dataContainer.style.display = (dataContainer.style.display === "none" || dataContainer.style.display === "") ? "block" : "none";
+        });
+    </script>
+
+
+
+
+    <!-- {% if data %}
+    <h4>Dictionary Data:</h4>
+    <pre>{{ data|safe }}</pre>
+{% elif error %}
+    <h4>Error:</h4>
+    <p>{{ error }}</p>
+{% endif %} -->
+
+
 </body>
 </html>
