@@ -8,9 +8,16 @@
 <body>
     <h3>Enter any letters and you will get all the combinations of words with those letters</h3>
 
-    <input type="text"/>
+    <form method="POST" action="{{ url_for('wordMaker') }}">
+    
+        <input type="text" name="letterinput" id="letterinput"  />
 
-    <button>Generate</button>
+        <button type="submit">Generate</button>
+        <button type="clear">Clear</button>
+        
+    </form>
+    
+    <strong>{{ letterinput }}</strong>
 
     <br />
     <br />
