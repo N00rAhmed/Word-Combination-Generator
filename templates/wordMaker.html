@@ -6,6 +6,10 @@
     <title>Word Maker</title>
 </head>
 <body>
+
+    {% include 'nav.html' %}
+
+
     <h3>Enter any letters and you will get all the combinations of words with those letters</h3>
 
     <form method="POST" action="{{ url_for('wordMaker') }}">
@@ -21,6 +25,8 @@
 
     <br />
     <br />
+
+    
 
     <button id="dataButton">Test Data</button>
 
