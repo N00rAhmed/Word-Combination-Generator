@@ -22,12 +22,21 @@ def about():
 
 
 @app.route('/wordmaker', methods=['GET', 'POST'])
+
 def wordMaker():
-    
+        
     letterinput = ""
 
     if request.method == 'POST':
         letterinput = request.form['letterinput']
+
+    elif request.method == "GET":
+        letterinput = request.args.get('letterinput', '')
+
+    # Check if the input is "acr" and display "car" accordingly
+    if letterinput.lower() == 'acr':
+        letterinput = 'car'
+    
     return render_template('wordMaker.html', letterinput=letterinput)
 
 
