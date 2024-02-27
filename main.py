@@ -40,18 +40,6 @@ def wordMaker():
     return render_template('wordMaker.html', letterinput=letterinput)
 
 
-    # api_url = "https://api.dictionaryapi.dev/api/v2/entries/en/mango"
-
-    # try:
-    #     response = requests.get(api_url)
-    #     response_data = json.loads(response.text)
-    #     formatted_data = json.dumps(response_data, indent=4)
-    #     return render_template('wordMaker.html', data=formatted_data)
-
-    # except Exception as e:
-    #     return render_template('wordMaker.html', letterinput=letterinput, error=str(e))
-
-
 
 if  __name__ == "__main__":
     app.run(debug=True)
