@@ -25,7 +25,14 @@ def about():
 
 def wordMaker():
         
+    words_array = ["eat", "tea"]
+
     letterinput = ""
+    is_post_request = request.method == 'POST'
+
+    if is_post_request and letterinput in words_array:
+        return render_template('wordMaker.html', words_array=words_array)
+
 
     if request.method == 'POST':
         letterinput = request.form['letterinput']
