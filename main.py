@@ -25,26 +25,22 @@ def about():
 
 def wordMaker():
         
+
+
     words_array = ["eat", "tea"]
-
-    letterinput = ""
-    is_post_request = request.method == 'POST'
-
-    if is_post_request and letterinput in words_array:
-        return render_template('wordMaker.html', words_array=words_array)
-
+    error = "incorrect input"
 
     if request.method == 'POST':
-        letterinput = request.form['letterinput']
+        letterinput = request.form.get('letterinput')
 
-    elif request.method == "GET":
-        letterinput = request.args.get('letterinput', '')
+        if letterinput in words_array:
+            return render_template('wordMaker.html', words_array=words_array)
+            
+        # else:
+        #     return render_template('wordMaker.html', error=error)
 
-    # Check if the input is "acr" and display "car" accordingly
-    if letterinput.lower() == 'acr':
-        letterinput = 'car'
-    
-    return render_template('wordMaker.html', letterinput=letterinput)
+
+    return render_template('wordMaker.html')
 
 
 
