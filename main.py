@@ -33,9 +33,13 @@ def wordMaker():
     if request.method == 'POST':
         letterinput = request.form.get('letterinput')
 
-        if letterinput in words_array:
-            return render_template('wordMaker.html', words_array=words_array)
-        
+        # if letterinput.lower() in words_array:
+        #     return render_template('wordMaker.html', words_array=words_array)
+
+        for char in letterinput:
+            if char in char(words_array):
+                return render_template('wordMaker.html', words_array=words_array)
+
         # potentially use for loop which iterate over each characrer in user input
         # and check against the array for valid characters 
         # (pseuso code) for char in letterinput:
