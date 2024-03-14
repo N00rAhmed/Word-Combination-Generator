@@ -27,7 +27,7 @@ def wordMaker():
         
 
 
-    words_array = ["eat", "tea", "ate", "we"]
+    words_array = ["eat", "tea", "ate", "we", "paint", "screw"]
     error = "incorrect input"
 
     if request.method == 'POST':
@@ -36,8 +36,8 @@ def wordMaker():
         # if letterinput.lower() in words_array:
         #     return render_template('wordMaker.html', words_array=words_array)
 
-        for char in letterinput:
-            if char in char(words_array):
+        for i in letterinput:
+            if i in str(words_array):
                 return render_template('wordMaker.html', words_array=words_array)
 
         # potentially use for loop which iterate over each characrer in user input
