@@ -27,26 +27,28 @@ def wordMaker():
         
 
 
-    words_array = ["eat", "tea", "ate", "we", "paint", "screw"]
-    error = "incorrect input"
-
     if request.method == 'POST':
         letterinput = request.form.get('letterinput')
 
+        userInputSet = set(letterinput)
+
+        words_array = ["apple", "banana", "cherry", "date", "elderberry", "tea", "eat", "ate"]
+
         # if letterinput.lower() in words_array:
         #     return render_template('wordMaker.html', words_array=words_array)
+        wordsMatch = []
+        for i in words_array:
+            if set(i).issubset(userInputSet):
+                wordsMatch.append(i)
 
-        for i in letterinput:
-            if i in str(words_array):
-                return render_template('wordMaker.html', words_array=words_array)
+        return render_template('wordMaker.html', wordsMatch=wordsMatch)
 
-        # potentially use for loop which iterate over each characrer in user input
-        # and check against the array for valid characters 
-        # (pseuso code) for char in letterinput:
-        # print (char)
 
-        # else:
-        #     return render_template('wordMaker.html', error=error)
+        # for i in letterinput:
+        #     if i in str(words_array):
+        #         return render_template('wordMaker.html', words_array=words_array)
+
+
 
 # make the logic work with current array first then move onto json file
 
