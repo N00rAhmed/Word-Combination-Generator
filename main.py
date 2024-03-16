@@ -21,6 +21,11 @@ def about():
     return render_template('about.html')
 
 
+@app.route("/footer")
+def footer():
+    return render_template('footer.html')
+
+
 @app.route('/wordmaker', methods=['GET', 'POST'])
 
 def wordMaker():
