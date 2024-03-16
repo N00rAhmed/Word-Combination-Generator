@@ -1,8 +1,8 @@
 # main/main.py
+import os
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, json, url_for
 import requests
-import json
 
 app = Flask(__name__)
 
@@ -33,6 +33,8 @@ def wordMaker():
         userInputSet = set(letterinput)
 
         words_array = ["apple", "banana", "cherry", "date", "elderberry", "tea", "eat", "ate"]
+        SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
+        json_url = os.path.join(SITE_ROOT, "english-words.json")
 
         # if letterinput.lower() in words_array:
         #     return render_template('wordMaker.html', words_array=words_array)
@@ -49,7 +51,7 @@ def wordMaker():
         #         return render_template('wordMaker.html', words_array=words_array)
 
 
-
+# maybe now try conencting to words api instead of json file ?
 # make the logic work with current array first then move onto json file
 
     return render_template('wordMaker.html')
