@@ -10,7 +10,7 @@
     {% include 'nav.html' %}
 
 
-    <h3>Enter any letters and you will get all the combinations of words with those letters</h3>
+    <h3>Enter any letters and you will get all the combinations of words that can be made with those letters</h3>
 
     <form method="POST" action="{{ url_for('wordMaker') }}">
     
@@ -21,7 +21,6 @@
         
     </form>
     
-    <!-- <strong>{{ i }}</strong> -->
     {% for i in wordsMatch %}
         {{i}} <br/>
     {% endfor %}

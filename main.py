@@ -1,8 +1,4 @@
-# main/main.py
-import os
-
-from flask import Flask, render_template, request, json, url_for
-import requests
+from flask import Flask, render_template, request, json
 
 app = Flask(__name__)
 
@@ -35,18 +31,18 @@ def wordMaker():
 
         userInputSet = set(letterinput.lower())
 
-        words_array = ["apple", "banana", "cherry", "date", "elderberry", "tea", "eat", "ate"]
+        # words_array = ["apple", "banana", "cherry", "date", "elderberry", "tea", "eat", "ate"]
         
-        SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
-        json_url = os.path.join(SITE_ROOT, "english-words.json")
+        data = json.load(open('./english-words.json'))
 
         wordsMatch = []
-        for i in words_array:
+        for i in data:
             if set(i).issubset(userInputSet):
                 wordsMatch.append(i)
 
         return render_template('wordMaker.html', wordsMatch=wordsMatch)
 
+# output is showing duplicate letters aswell which arent in the user input
 
 # maybe now try conencting to words api instead of json file ?
 # make the logic work with current array first then move onto json file
