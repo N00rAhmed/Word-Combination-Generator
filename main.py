@@ -30,30 +30,22 @@ def footer():
 
 def wordMaker():
         
-
-
     if request.method == 'POST':
         letterinput = request.form.get('letterinput')
 
-        userInputSet = set(letterinput)
+        userInputSet = set(letterinput.lower())
 
         words_array = ["apple", "banana", "cherry", "date", "elderberry", "tea", "eat", "ate"]
+        
         SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
         json_url = os.path.join(SITE_ROOT, "english-words.json")
 
-        # if letterinput.lower() in words_array:
-        #     return render_template('wordMaker.html', words_array=words_array)
         wordsMatch = []
         for i in words_array:
             if set(i).issubset(userInputSet):
                 wordsMatch.append(i)
 
         return render_template('wordMaker.html', wordsMatch=wordsMatch)
-
-
-        # for i in letterinput:
-        #     if i in str(words_array):
-        #         return render_template('wordMaker.html', words_array=words_array)
 
 
 # maybe now try conencting to words api instead of json file ?
