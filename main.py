@@ -31,11 +31,14 @@ def wordMaker():
 
         userInputSet = set(letterinput.lower())
 
-        # words_array = ["apple", "banana", "cherry", "date", "elderberry", "tea", "eat", "ate"]
+        # TO IDENTIFY EACH CHARACTER maybe put useInputSet in FOR LOOP INSTEAD
+
+        # words_array = ["apple", "banana", "cherry", "elderberry", "tea", "eat", "ate", "date", "add"]
         
         data = json.load(open('./english-words.json'))
 
         wordsMatch = []
+        
         for i in data:
             if set(i).issubset(userInputSet):
                 wordsMatch.append(i)
