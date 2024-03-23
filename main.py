@@ -32,16 +32,23 @@ def wordMaker():
         userInputSet = set(letterinput.lower())
 
         # TO IDENTIFY EACH CHARACTER maybe put useInputSet in FOR LOOP INSTEAD
-
-        # words_array = ["apple", "banana", "cherry", "elderberry", "tea", "eat", "ate", "date", "add"]
-        
         data = json.load(open('./english-words.json'))
 
         wordsMatch = []
+
+        for i in userInputSet:
+            if set(data).issubset(i):
+                wordsMatch.append(data)
+
+        # words_array = ["apple", "banana", "cherry", "elderberry", "tea", "eat", "ate", "date", "add"]
         
-        for i in data:
-            if set(i).issubset(userInputSet):
-                wordsMatch.append(i)
+        # data = json.load(open('./english-words.json'))
+
+        # wordsMatch = []
+        
+        # for i in data:
+        #     if set(i).issubset(userInputSet):
+        #         wordsMatch.append(i)
 
         return render_template('wordMaker.html', wordsMatch=wordsMatch)
 
