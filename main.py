@@ -36,19 +36,30 @@ def wordMaker():
 
         wordsMatch = []
 
-        for i in userInputSet:
-            if set(data).issubset(i):
-                wordsMatch.append(data)
+        # for i in userInputSet:
+        #     for word in data:
+        #         if set(i).issubset(set(word)):
+        #             wordsMatch.append((word))
+            
+            # if set(i).issubset(data):
+            #     wordsMatch.append(data)
 
         # words_array = ["apple", "banana", "cherry", "elderberry", "tea", "eat", "ate", "date", "add"]
         
         # data = json.load(open('./english-words.json'))
 
         # wordsMatch = []
+
+
+        # for word in data:
+        #     # Check if the word contains all characters in userInputSet, has the same length as the user input, and no duplicate letters
+        #     if userInputSet.issubset(set(word)) and len(word) == len(letterinput) and len(word) == len(set(word)):
+        #         wordsMatch.append(word)
+
         
-        # for i in data:
-        #     if set(i).issubset(userInputSet):
-        #         wordsMatch.append(i)
+        for i in data:
+            if set(i).issubset(userInputSet):
+                wordsMatch.append(i)
 
         return render_template('wordMaker.html', wordsMatch=wordsMatch)
 
