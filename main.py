@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, json
+from collections import Counter
 
 app = Flask(__name__)
 
@@ -36,26 +37,7 @@ def wordMaker():
 
         wordsMatch = []
 
-        # for i in userInputSet:
-        #     for word in data:
-        #         if set(i).issubset(set(word)):
-        #             wordsMatch.append((word))
-            
-            # if set(i).issubset(data):
-            #     wordsMatch.append(data)
-
         # words_array = ["apple", "banana", "cherry", "elderberry", "tea", "eat", "ate", "date", "add"]
-        
-        # data = json.load(open('./english-words.json'))
-
-        # wordsMatch = []
-
-
-        # for word in data:
-        #     # Check if the word contains all characters in userInputSet, has the same length as the user input, and no duplicate letters
-        #     if userInputSet.issubset(set(word)) and len(word) == len(letterinput) and len(word) == len(set(word)):
-        #         wordsMatch.append(word)
-
         
         for i in data:
             if set(i).issubset(userInputSet):
@@ -63,10 +45,11 @@ def wordMaker():
 
         return render_template('wordMaker.html', wordsMatch=wordsMatch)
 
+# use the collections.Counter class to count characters in an element
+# To check for duplicate characters in the user input and identify them, you can use the collections.Counter class from the Python standard library. 
+# This class can count the occurrences in a list, making it easy to identify duplicates
+    
 # output is showing duplicate letters aswell which arent in the user input
-
-# maybe now try conencting to words api instead of json file ?
-# make the logic work with current array first then move onto json file
 
     return render_template('wordMaker.html')
 
