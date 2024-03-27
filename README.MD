@@ -4,7 +4,7 @@
 This application is designed to take user input of random letters and generate all possible combinations of words using those letters.
 
 ### Tech Stack
-##### Python | Flask | HTML
+##### Python | Flask | JavaScript | HTML
 
 ### Run Application
 

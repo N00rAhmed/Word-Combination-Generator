@@ -30,9 +30,9 @@ def wordMaker():
     if request.method == 'POST':
         letterinput = request.form.get('letterinput')
 
-        userInputSet = set(letterinput.lower())
+        userInputSet = set(Counter(letterinput.lower()))
+        print(Counter(userInputSet))
 
-        # TO IDENTIFY EACH CHARACTER maybe put useInputSet in FOR LOOP INSTEAD
         data = json.load(open('./english-words.json'))
 
         wordsMatch = []
