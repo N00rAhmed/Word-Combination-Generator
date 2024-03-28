@@ -31,7 +31,10 @@ def wordMaker():
         letterinput = request.form.get('letterinput')
 
         userInputSet = set(Counter(letterinput.lower()))
-        print(Counter(userInputSet))
+        emp = []
+        for k in letterinput:
+            emp.append(k)
+            print(Counter(emp))
 
         data = json.load(open('./english-words.json'))
 
