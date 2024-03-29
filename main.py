@@ -31,10 +31,12 @@ def wordMaker():
         letterinput = request.form.get('letterinput')
 
         userInputSet = set(Counter(letterinput.lower()))
-        emp = []
+
+        userInputArray = []
         for k in letterinput:
-            emp.append(k)
-            print(Counter(emp))
+            userInputArray.append(k)
+        characterCount = Counter(userInputArray)
+        print(characterCount)
 
         data = json.load(open('./english-words.json'))
 
@@ -43,8 +45,15 @@ def wordMaker():
         # words_array = ["apple", "banana", "cherry", "elderberry", "tea", "eat", "ate", "date", "add"]
         
         for i in data:
-            if set(i).issubset(userInputSet):
+            outputCharacterCounter = Counter(i)
+
+            if set(i).issubset(userInputSet) and characterCount == outputCharacterCounter:
                 wordsMatch.append(i)
+                print("i(json): {}, characterCount(Input): {}, outputCharacterCount(Output): {}".format(i, characterCount, outputCharacterCounter))
+
+            # if set(i).issubset(userInputSet):
+                # wordsMatch.append(i)
+                # print(Counter(i))
 
         return render_template('wordMaker.html', wordsMatch=wordsMatch)
 
