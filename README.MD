@@ -1,10 +1,10 @@
-# Flask Word Combo Maker Application
+# Word Combination Generator
 
 ### Introduction
-This application is designed to take user input of random letters and generate all possible combinations of words using those letters.
+This Flask application is designed to take user input of random letters and generate all possible combinations of words using those letters.
 
 ### Tech Stack
-##### Python | Flask | JavaScript | HTML
+##### Python | Flask | JavaScript | HTML/CSS
 
 ### Run Application
 
