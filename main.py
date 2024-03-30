@@ -47,7 +47,7 @@ def wordMaker():
         for i in data:
             outputCharacterCounter = Counter(i)
 
-            if set(i).issubset(userInputSet) and characterCount == outputCharacterCounter:
+            if set(i).issubset(userInputSet) and characterCount >= outputCharacterCounter:
                 wordsMatch.append(i)
                 print("i(json): {}, characterCount(Input): {}, outputCharacterCount(Output): {}".format(i, characterCount, outputCharacterCounter))
 
