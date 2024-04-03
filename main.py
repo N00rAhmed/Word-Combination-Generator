@@ -51,17 +51,9 @@ def wordMaker():
                 wordsMatch.append(i)
                 print("i(json): {}, characterCount(Input): {}, outputCharacterCount(Output): {}".format(i, characterCount, outputCharacterCounter))
 
-            # if set(i).issubset(userInputSet):
-                # wordsMatch.append(i)
-                # print(Counter(i))
 
         return render_template('wordMaker.html', wordsMatch=wordsMatch)
 
-# use the collections.Counter class to count characters in an element
-# To check for duplicate characters in the user input and identify them, you can use the collections.Counter class from the Python standard library. 
-# This class can count the occurrences in a list, making it easy to identify duplicates
-    
-# output is showing duplicate letters aswell which arent in the user input
 
     return render_template('wordMaker.html')
 
