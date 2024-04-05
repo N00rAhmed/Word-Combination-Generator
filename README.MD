@@ -17,3 +17,13 @@ flask --app main run
 ```
 python main.py
 ```
+
+### Run Tests(pending)
+
+```
+cd tests 
+```
+
+```
+python test_wordMaker.py
+```
