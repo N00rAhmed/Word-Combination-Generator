@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, json
+import os
 from collections import Counter
 
 app = Flask(__name__)
@@ -38,7 +39,22 @@ def wordMaker():
         characterCount = Counter(userInputArray)
         print(characterCount)
 
-        data = json.load(open('./english-words.json'))
+
+        # data = json.load(open('./english-words.json'))
+
+        # Dynamically determine the path to the JSON file
+        script_dir = os.path.dirname(os.path.realpath(__file__))
+        json_file_path = os.path.join(script_dir, './english-words.json')
+
+        # Load the JSON file
+        with open(json_file_path, 'r') as f:
+            data = json.load(f)
+
+        
+        # with open('./english-words.json') as f:
+        #     data = json.load(f)
+
+
 
         wordsMatch = []
 

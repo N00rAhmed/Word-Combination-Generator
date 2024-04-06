@@ -1,10 +1,12 @@
 import sys
 import os
+import json
+
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from main import wordMaker
 import unittest
-from flask import Flask, request
+from flask import Flask
 
 class TestWordMaker(unittest.TestCase):
     def setUp(self):
@@ -17,7 +19,13 @@ class TestWordMaker(unittest.TestCase):
             # Simulate a POST request with 'apple' as input
             response = wordMaker()
             # Assuming 'apple' is in the json data
+            # Note: You might need to adjust this part based on how you're returning the response
+            # For example, if you're returning a template with a list of words, you might need to parse the response
+            # to check if 'apple' is in the list of words.
             self.assertIn('apple', response)
 
 if __name__ == '__main__':
     unittest.main()
+
+
+# using pytest currently for testing
