@@ -24,7 +24,7 @@ def footer():
     return render_template('footer.html')
 
 
-@app.route('/wordmaker', methods=['GET', 'POST'])
+@app.route('/wordMaker', methods=['GET', 'POST'])
 
 def wordMaker():
         
