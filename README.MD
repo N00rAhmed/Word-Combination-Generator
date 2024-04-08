@@ -9,7 +9,7 @@ This Flask application is designed to take user input of random letters and gene
 ### Prerequisites
 Please make sure you have the following installed on your machine:
 ```
-pip install Flask
+pip install -r requirements.txt
 ```
 
 ### Run Application
