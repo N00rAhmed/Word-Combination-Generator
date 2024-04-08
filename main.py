@@ -24,7 +24,7 @@ def footer():
     return render_template('footer.html')
 
 
-@app.route('/wordMaker', methods=['GET', 'POST'])
+@app.route('/wordmaker', methods=['GET', 'POST'])
 
 def wordMaker():
         
@@ -76,5 +76,6 @@ def wordMaker():
 
 
 if  __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
+    # app.run(debug=True)
 
