@@ -6,6 +6,12 @@ This Flask application is designed to take user input of random letters and gene
 ### Tech Stack
 ##### Python | Flask | JavaScript | HTML/CSS
 
+### Prerequisites
+Please make sure you have the following installed on your machine:
+```
+pip install Flask
+```
+
 ### Run Application
 
 ```
@@ -18,12 +24,12 @@ flask --app main run
 python main.py
 ```
 
-### Run Tests(pending)
+### Run Tests
 
 ```
 cd tests 
 ```
 
 ```
-python test_wordMaker.py
+python -m unittest test_wordMaker.py
 ```
