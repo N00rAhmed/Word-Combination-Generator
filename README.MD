@@ -33,7 +33,7 @@ Build the image, this may take some time. After your image is built, you can vie
 ```
 docker build -t word-combination-generator .
 ```
-The -t flag tags your image with a name, reference-program-dockerisation in this case. And the . lets Docker know where it can find the Dockerfile.
+The -t flag tags your image with a name, `word-combination-generator` in this case. And the `.` lets Docker know where it can find the Dockerfile.
 
 ### Run Command
 To run the program type this command:
