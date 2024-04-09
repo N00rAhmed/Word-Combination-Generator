@@ -42,7 +42,7 @@ To run the program type this command:
 docker run -p 5000:5000 word-combination-generator
 ```
 
-### Run Tests
+### Run Unit Tests
 
 ```
 cd tests 
