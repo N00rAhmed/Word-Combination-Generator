@@ -25,7 +25,7 @@ python main.py
 ```
 
 ### Docker
-Download Docker Desktop for Mac or Windows. This solution uses Python3 and Python libraries.
+Download Docker Desktop for Mac or Windows. This solution uses Python3 and Flask.
 
 ### Build Command
 Build the image, this may take some time. After your image is built, you can view your image in the Images tab in Docker Desktop.
