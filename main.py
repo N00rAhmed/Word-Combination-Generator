@@ -35,7 +35,7 @@ def wordMaker():
 
         userInputArray = []
         for k in letterinput:
-            userInputArray.append(k)
+            userInputArray.append(k.lower())
         characterCount = Counter(userInputArray)
         print(characterCount)
 
