@@ -4,7 +4,7 @@
 This Flask application is designed to take user input of random letters and generate all possible combinations of words using those letters.
 
 ### Tech Stack
-##### Python | Flask | JavaScript | HTML/CSS
+##### Python | Flask | JavaScript | HTML/CSS | Docker
 
 ### Prerequisites
 Please make sure you have the following installed on your machine:
