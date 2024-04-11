@@ -39,6 +39,7 @@ def wordMaker():
         characterCount = Counter(userInputArray)
         print(characterCount)
 
+
         # data = json.load(open('./english-words.json'))
 
         # Dynamically determine the path to the JSON file
@@ -49,8 +50,10 @@ def wordMaker():
         with open(json_file_path, 'r') as f:
             data = json.load(f)
 
+        
         # with open('./english-words.json') as f:
         #     data = json.load(f)
+        
 
         wordsMatch = []
 
@@ -68,6 +71,7 @@ def wordMaker():
 
 
     return render_template('wordMaker.html')
+
 
 
 if  __name__ == "__main__":
