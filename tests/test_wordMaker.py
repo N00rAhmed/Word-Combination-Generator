@@ -4,13 +4,8 @@ import json
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-# import main # Import the main module to ensure routes are registered
-# from flask import Flask
-# import unittest
 from main import app, wordMaker # Import the Flask app instance and the wordMaker function
 import unittest
-
-
 
 class TestWordMaker(unittest.TestCase):
     def setUp(self):
