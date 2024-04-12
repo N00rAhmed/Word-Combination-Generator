@@ -59,15 +59,20 @@ def wordMaker():
 
         # words_array = ["apple", "banana", "cherry", "elderberry", "tea", "eat", "ate", "date", "add"]
         
+        wordCount = 0
+        
         for i in data:
             outputCharacterCounter = Counter(i)
 
             if set(i).issubset(userInputSet) and characterCount >= outputCharacterCounter:
                 wordsMatch.append(i)
-                print("i(json): {}, characterCount(Input): {}, outputCharacterCount(Output): {}".format(i, characterCount, outputCharacterCounter))
+                
+                wordCount = len(wordsMatch)
+                print("word count: " + str(wordCount)) 
+                # print("i(json): {}, characterCount(Input): {}, outputCharacterCount(Output): {}".format(i, characterCount, outputCharacterCounter))
 
 
-        return render_template('wordMaker.html', wordsMatch=wordsMatch)
+        return render_template('wordMaker.html', wordsMatch=wordsMatch, wordCount=wordCount)
 
 
     return render_template('wordMaker.html')
