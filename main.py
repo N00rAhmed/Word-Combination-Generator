@@ -68,8 +68,9 @@ def wordMaker():
                 wordsMatch.append(i)
                 
                 wordCount = len(wordsMatch)
+                
                 print("word count: " + str(wordCount)) 
-                # print("i(json): {}, characterCount(Input): {}, outputCharacterCount(Output): {}".format(i, characterCount, outputCharacterCounter))
+                print("i(json): {}, characterCount(Input): {}, outputCharacterCount(Output): {}".format(i, characterCount, outputCharacterCounter))
 
 
         return render_template('wordMaker.html', wordsMatch=wordsMatch, wordCount=wordCount)
