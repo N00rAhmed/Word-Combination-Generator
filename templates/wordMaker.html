@@ -20,18 +20,15 @@
         <br />
 
         <button type="submit" name="anything_submit" value="Submit" onclick="loading();">Generate</button>
-        <!-- <input type="submit" name="anything_submit" value="Submit" onclick="loading();"> -->
 
         <button type="clear">Clear</button>
-
-        <!-- <div id="loading">loading ...</div> -->
         
     </form>
 
     <div id="loading">loading ...</div>
 
     <div id="word-count">word count: {{wordCount}}</div>
-    <br />
+
     {% for i in wordsMatch %}
         {{i}} <br/>
     {% endfor %}
@@ -42,22 +39,24 @@
     {% include 'footer.html' %}
 
 
-    <script type="text/javascript">// <![CDATA[
+    <script type="text/javascript">
         function loading(){
             $("#loading").show();
             $("#content").hide();       
         }
-// ]]></script>
+    </script>
 
+    
     <style>
-        div#loading {
-    width: 35px;
-    height: 35px;
-    display: none;
-    background: url(/static/loadingimage.gif) no-repeat;
-    cursor: wait;
+    div#loading {
+        width: 35px;
+        height: 35px;
+        display: none;
+        background: url(/static/loadingimage.gif) no-repeat;
+        cursor: wait;
     }
-
     </style>
+
+
 </body>
 </html>
