@@ -68,7 +68,7 @@ def wordMaker():
                 wordsMatch.append(i)
                 
                 wordCount = len(wordsMatch)
-                
+
                 print("word count: " + str(wordCount)) 
                 print("i(json): {}, characterCount(Input): {}, outputCharacterCount(Output): {}".format(i, characterCount, outputCharacterCounter))
 
@@ -82,5 +82,4 @@ def wordMaker():
 
 if  __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
-    # app.run(debug=True)
 
