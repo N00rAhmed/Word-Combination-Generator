@@ -4,6 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Word Maker</title>
+
+    <style>
+        /* CSS for the loading animation */
+        .loader {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+            display: none; /* Initially hidden */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+
+
 </head>
 <body>
 
@@ -24,9 +49,42 @@
 
         <button type="clear">Clear</button>
 
-        <div id="loading">loading ...</div>
+        <!-- <div id="loading">loading ...</div> -->
         
     </form>
+
+    <div class="loader" id="loading"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        function fetchData() {
+            showLoading();
+            var url = $('body').data('url'); // Access the URL from the data attribute
+            $.ajax({
+                type: 'POST',
+                url: url, // Use the URL here
+                data: { letterinput: $('#letterinput').val() },
+                dataType: 'json',
+                success: function(data) {
+                    // Process and display the data here
+                    hideLoading();
+                },
+                error: function() {
+                    console.log("Error fetching data");
+                    hideLoading();
+                }
+            });
+        }
+    
+        function showLoading() {
+            $("#loading").show();
+        }
+    
+        function hideLoading() {
+            $("#loading").hide();
+        }
+    </script>
+    
 
     word count: {{wordCount}}
     <br />
@@ -40,14 +98,14 @@
     {% include 'footer.html' %}
 
 
-    <script type="text/javascript">// <![CDATA[
+    <!-- <script type="text/javascript">// <![CDATA[
         function loading(){
             $("#loading").show();
             $("#content").hide();       
         }
-// ]]></script>
+// ]]></script> -->
 
-    <style>
+    <!-- <style>
         div#loading {
     width: 35px;
     height: 35px;
@@ -56,6 +114,9 @@
     cursor: wait;
     }
 
-    </style>
+    </style> -->
+
+
+
 </body>
 </html>
