@@ -15,19 +15,13 @@
         <a href="https://github.com/N00rAhmed/Word-Combination-Generator" target="_blank">here</a>
     </h3>
 
-    <form method="POST" action="{{ url_for('wordMaker') }}" onSubmit="loading();">
+    <form method="POST" action="{{ url_for('wordMaker') }}">
         <textarea rows="5" cols="45" type="text" name="letterinput" id="letterinput"></textarea>
         <br />
 
         <button type="submit" name="anything_submit" value="Submit" onclick="loading();">Generate</button>
         <!-- <input type="submit" name="anything_submit" value="Submit" onclick="loading();"> -->
-        <script type="text/javascript">// <![CDATA[
-            function loading(){
-                $("#loading").show();
-                $("#content").hide();       
-            }
-    // ]]></script>
-    
+
         <button type="clear">Clear</button>
 
         <!-- <div id="loading">loading ...</div> -->
@@ -48,6 +42,12 @@
     {% include 'footer.html' %}
 
 
+    <script type="text/javascript">// <![CDATA[
+        function loading(){
+            $("#loading").show();
+            $("#content").hide();       
+        }
+// ]]></script>
 
     <style>
         div#loading {
