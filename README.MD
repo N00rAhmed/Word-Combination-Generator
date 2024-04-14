@@ -1,4 +1,4 @@
-# Word Combination Generator
+# Word Combination Generator Documentation
 
 <h2>Table of Contents</h2>
 
