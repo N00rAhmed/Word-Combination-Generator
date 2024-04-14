@@ -14,7 +14,7 @@
 <hr />
 
 ### Introduction
-This Flask application is designed to take user input of random letters and generate all possible combinations of words using those letters.
+This Flask application can take user input of random letters and generate all the possible combinations of words which can be made using those letters and also it displays the amount of words generated. Unit tests are provided in the `tests` directory, the command to run them can be found below in the documentation.
 
 ### Tech Stack
 ##### Flask | Python | JavaScript | HTML/CSS | Docker
