@@ -7,6 +7,8 @@
 - [Prerequisites](#prerequisites)
 - [Run Application](#run-application)
 - [Docker](#docker)
+- [Build Command](#build-command)
+- [Run Command](#run-command)
 - [Run Unit Tests](#run-unit-tests)
 
 <hr />
