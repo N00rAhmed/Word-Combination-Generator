@@ -1,5 +1,16 @@
 # Word Combination Generator
 
+<h2>Table of Contents</h2>
+
+- [Introduction](#introduction)
+- [Tech Stack](#tech-stack)
+- [Prerequisites](#prerequisites)
+- [Run Application](#run-application)
+- [Docker](#docker)
+- [Run Unit Tests](#run-unit-tests)
+
+<hr />
+
 ### Introduction
 This Flask application is designed to take user input of random letters and generate all possible combinations of words using those letters.
 
