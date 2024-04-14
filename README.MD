@@ -49,7 +49,7 @@ docker build -t word-combination-generator .
 The -t flag tags your image with a name, `word-combination-generator` in this case. And the `.` lets Docker know where it can find the Dockerfile.
 
 ### Run Command
-To run the program type this command:
+To run the docker image type this command:
 
 ```
 docker run -p 5000:5000 word-combination-generator
