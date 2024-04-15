@@ -1,7 +1,20 @@
 # Word Combination Generator
 
+<h2>Table of Contents</h2>
+
+- [Introduction](#introduction)
+- [Tech Stack](#tech-stack)
+- [Prerequisites](#prerequisites)
+- [Run Application](#run-application)
+- [Docker](#docker)
+  - [Build Command](#build-command)
+  - [Run Command](#run-command)
+- [Run Unit Tests](#run-unit-tests)
+
+<hr />
+
 ### Introduction
-This Flask application is designed to take user input of random letters and generate all possible combinations of words using those letters.
+This Flask application can take user input of random letters and generate all the possible combinations of words which can be made using those letters and also it displays the amount of words generated. Unit tests are provided in the `tests` directory, the command to run them can be found below in the documentation.
 
 ### Tech Stack
 ##### Flask | Python | JavaScript | HTML/CSS | Docker
@@ -36,7 +49,7 @@ docker build -t word-combination-generator .
 The -t flag tags your image with a name, `word-combination-generator` in this case. And the `.` lets Docker know where it can find the Dockerfile.
 
 ### Run Command
-To run the program type this command:
+To run the docker image type this command:
 
 ```
 docker run -p 5000:5000 word-combination-generator
