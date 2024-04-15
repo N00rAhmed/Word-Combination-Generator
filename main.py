@@ -8,23 +8,20 @@ app = Flask(__name__)
 def navigation():
     return render_template('nav.html')
 
-
 @app.route("/")
 def home():
     return render_template('index.html')
-
 
 @app.route('/about')
 def about():
     return render_template('about.html')
 
-
 @app.route("/footer")
 def footer():
     return render_template('footer.html')
 
-
 @app.route('/wordmaker', methods=['GET', 'POST'])
+
 
 def wordMaker():
         
@@ -38,7 +35,6 @@ def wordMaker():
             userInputArray.append(k.lower())
         characterCount = Counter(userInputArray)
         print(characterCount)
-
 
         # data = json.load(open('./english-words.json'))
 
