@@ -9,11 +9,7 @@
 
     {% include 'nav.html' %}
 
-    <h3>Enter any letters and you will get all the combinations of words that can be made with those letters.
-        <br />
-        Access the github repository 
-        <a href="https://github.com/N00rAhmed/Word-Combination-Generator" target="_blank">here</a>
-    </h3>
+    <h3>Enter any letters and you will get all the combinations of words that can be made with those letters.</h3>
 
     <form method="POST" action="{{ url_for('wordMaker') }}">
         <textarea rows="5" cols="45" type="text" name="letterinput" id="letterinput"></textarea>
